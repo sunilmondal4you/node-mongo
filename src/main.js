@@ -3,8 +3,8 @@ import { saveOneDocument } from "./appmongo/insert.util.js";
 import { readDocuments } from "./appmongo/read.util.js";
 
 const app = express();
-app.use(express.json()); // for parsing application/json
-app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
   let list = await readDocuments();
