@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 
 const uri = "mongodb://localhost:27017";
 
-export const saveOneDocument = async (newDocument) => {
+export const insertOneCollection = async (newDocument) => {
   const client = new MongoClient(uri);
   const usersColl = client.db("practice").collection("users");
 

@@ -13,7 +13,7 @@ const readOneDocument = async () => {
   client.close();
 };
 
-const saveOneDocument = async () => {
+const insertOneCollection = async () => {
   const client = new MongoClient(uri);
   const usersColl = client.db("practice").collection("users");
 
@@ -24,4 +24,4 @@ const saveOneDocument = async () => {
   client.close();
 };
 
-saveOneDocument();
+insertOneCollection();

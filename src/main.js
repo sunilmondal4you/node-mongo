@@ -1,5 +1,5 @@
 import express from "express";
-import { saveOneDocument } from "./appmongo/insert.util.js";
+import { insertOneCollection } from "./appmongo/insert.util.js";
 import { readDocuments } from "./appmongo/read.util.js";
 
 const app = express();
@@ -21,7 +21,7 @@ app.get("/insert", async (req, res) => {
   let emailId = req.query.emailId || "rakesh@gmail.com";
 
   let newColl = { userName: userName, emailId: emailId };
-  await saveOneDocument(newColl);
+  await insertOneCollection(newColl);
 
   let message = { success: true };
   res.json(message);
@@ -29,7 +29,7 @@ app.get("/insert", async (req, res) => {
 
 app.post("/insert", async (req, res) => {
   let newDocument = req.body;
-  await saveOneDocument(newDocument);
+  await insertOneCollection(newDocument);
 
   let message = { success: true };
   res.json(message);
